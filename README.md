@@ -34,3 +34,23 @@ curl -X POST http://localhost:11434/api/generate -d '{
 ## 5 Realizar un reques sin stream 
 Para realizar una cosulta a la API RESTsin stream se hace de la siguiente forma 
 ````bash
+````
+## 6 Consulta GROQ
+Estructura basica para realiar una consulta a GROQ mediante su API REST utilizando el siguiente comando 
+````bash 
+curl "https://api.groq.com/openai/v1/chat/completions" \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer ${GROQ_API_KEY}" \
+  -d '{
+         "messages": [
+           {
+             "role": "user",
+             "content": ""
+           }
+         ],
+         "model": "llama3-8b-8192",
+         "stream": false
+        
+       }'
+````
